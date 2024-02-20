@@ -1,2 +1,2 @@
 
-console.log(typeof JsUser.mySym);
+// console.log(tinderUserValues);
