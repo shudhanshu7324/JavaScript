@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      .main {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main"><h1 id="heading">Chai aur Code</h1></div>
+    <!-- <button id="btn">Stop</button> -->
+
+    <script>
+      const head = document.getElementById("heading");
+      const button = document.querySelector("#btn");
+
+      //   const timeOut = setTimeout(function () {
+      //     head.innerText = "Learning from Best JavaScript Playlist";
+      //   }, 2000);
+
+      //   const anotherTimeout = setTimeout(function () {
+      //     head.innerText = "Hello Users";
+      //   }, 2000 + 2000);
+
+      //   button.addEventListener("click", (e) => {
+      //     console.log("Timeout stopped");
+      //     clearInterval(timeOut);
+      //   });
+
+      function recursiveCall() {
+        setTimeout(function () {
+          head.innerText = "Learning from Best JavaScript Playlist";
+        }, 3000);
+
+        setTimeout(function () {
+          head.innerText = "Hello Users";
+        }, 6000); // 3000ms for the first timeout + 3000ms delay
+
+        setTimeout(function () {
+          head.innerText = "Hello";
+        }, 9000); // Additional 3000ms delay
+
+        setTimeout(function () {
+          head.innerText = "Hello timeout4";
+          recursiveCall(); // Restart the sequence after the last update
+        }, 12000); // Additional 3000ms delay, making it 12000ms in total before restarting
+      }
+
+      // Initial call to start the sequence
+      recursiveCall();
+    </script>
+  </body>
+</html>
